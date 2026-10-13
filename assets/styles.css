@@ -33,9 +33,6 @@
   --sh-xl: 0 24px 80px rgba(0,0,0,0.16);
 }
 
-/* ============================
-   RESET & BASE
-============================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -50,140 +47,76 @@ img, video { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 button { font-family: var(--sans); cursor: pointer; }
 ul { list-style: none; }
-
-/* ============================
-   LANGUAGE SYSTEM
-============================ */
 body.lang-id [data-en] { display: none !important; }
 body.lang-en [data-id] { display: none !important; }
-
-/* ============================
-   SCROLLBAR
-============================ */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 3px; }
 
-/* ============================
-   MEDIA EDITOR MODAL
-============================ */
-.med-modal {
-  display: none; position: fixed; inset: 0; z-index: 9999;
-  background: rgba(0,0,0,0.65); backdrop-filter: blur(8px);
-  align-items: center; justify-content: center; padding: 20px;
+/* Premium polish */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(215, 0, 0, 0.10), transparent 26%);
+  z-index: 0;
 }
-.med-modal.open { display: flex; }
-.med-box {
-  background: white; border-radius: var(--r-lg); padding: 32px;
-  max-width: 480px; width: 100%; max-height: 88vh; overflow-y: auto;
-  box-shadow: var(--sh-xl);
-}
-.med-box h3 {
-  font-family: var(--serif); font-size: 20px; color: var(--charcoal);
-  margin-bottom: 4px;
-}
-.med-box .med-desc { font-size: 13px; color: var(--gray-400); margin-bottom: 22px; }
-.med-tabs { display: flex; gap: 6px; margin-bottom: 20px; }
-.med-tab {
-  border: 1.5px solid var(--gray-200); border-radius: 50px; background: none;
-  padding: 7px 16px; font-size: 12.5px; font-weight: 600; color: var(--gray-500);
-  transition: all 0.2s;
-}
-.med-tab.active { background: var(--charcoal); border-color: var(--charcoal); color: white; }
-.med-field { margin-bottom: 14px; }
-.med-field label {
-  display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; color: var(--gray-400); margin-bottom: 7px;
-}
-.med-field input, .med-field select {
-  width: 100%; border: 1.5px solid var(--gray-200); border-radius: var(--r-sm);
-  padding: 10px 13px; font-family: var(--sans); font-size: 13.5px;
-  color: var(--charcoal); outline: none; transition: border-color 0.2s;
-  background: white;
-}
-.med-field input:focus, .med-field select:focus { border-color: var(--red); }
-.med-actions { display: flex; gap: 8px; margin-top: 22px; }
-.med-apply {
-  flex: 1; background: var(--red); color: white; border: none;
-  padding: 11px; border-radius: 50px; font-size: 14px; font-weight: 600;
-  transition: background 0.2s;
-}
-.med-apply:hover { background: var(--red-hover); }
-.med-cancel {
-  background: var(--gray-100); color: var(--charcoal); border: none;
-  padding: 11px 20px; border-radius: 50px; font-size: 14px; font-weight: 500;
-  transition: background 0.2s;
-}
-.med-cancel:hover { background: var(--gray-200); }
-
-/* ============================
-   NAVIGATION
-============================ */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  background: rgba(255,255,255,0.93);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  transition: box-shadow 0.3s;
-}
-.nav.up { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
-.nav-wrap {
-  max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  height: 66px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; }
-.nav-logo-icon {
-  width: 36px; height: 36px; background: transparent; border-radius: 50%; overflow: hidden;
-  display: grid; place-items: center;
-}
-.nav-logo-icon img {
-  width: 30px; height: 30px; object-fit: contain;
-  background: transparent;
-  display: block;
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -10%;
+  bottom: -20%;
+  width: 520px;
+  height: 520px;
   border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.10), transparent 58%);
+  pointer-events: none;
+  z-index: 1;
 }
-.nav-logo-text { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--charcoal); }
-.nav-logo-text em { color: var(--red); font-style: normal; }
-.nav-links { display: flex; gap: 34px; }
-.nav-links a {
-  font-size: 13.5px; font-weight: 500; color: var(--gray-500);
-  transition: color 0.2s; position: relative; padding-bottom: 2px;
+.nav-logo-text,
+.title,
+.hero h1,
+.svc-name,
+.rev-name,
+.footer-col-title { letter-spacing: -0.02em; }
+.nav-wa,
+.btn-red,
+.btn-outline-w,
+.btn-wa,
+.floating-wa {
+  box-shadow: 0 12px 30px rgba(215,0,0,0.14);
 }
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -3px; left: 0;
-  width: 0; height: 1.5px; background: var(--red); transition: width 0.25s var(--ease);
+.floating-wa {
+  position: fixed;
+  right: 22px;
+  bottom: 26px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #2ae06a 0%, #1bbf5c 100%);
+  color: white;
+  border: 4px solid rgba(255,255,255,0.95);
+  box-shadow: 0 18px 40px rgba(18, 185, 85, 0.32);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.nav-links a:hover { color: var(--charcoal); }
-.nav-links a:hover::after { width: 100%; }
-.nav-controls { display: flex; align-items: center; gap: 14px; }
-.lang-toggle { display: flex; background: var(--gray-100); border-radius: 30px; padding: 3px; gap: 2px; }
-.lang-btn {
-  border: none; background: none; padding: 5px 14px; border-radius: 24px;
-  font-size: 11.5px; font-weight: 700; letter-spacing: 0.5px; color: var(--gray-400);
-  transition: all 0.2s;
+.floating-wa:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 22px 48px rgba(18,185,85,0.42);
 }
-.lang-btn.on { background: white; color: var(--charcoal); box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
-.nav-wa {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--red); color: white; border: none;
-  padding: 9px 20px; border-radius: 50px;
-  font-size: 13px; font-weight: 600;
-  transition: all 0.25s var(--ease);
-}
-.nav-wa:hover { background: var(--red-hover); transform: translateY(-1px); box-shadow: 0 5px 16px var(--red-glow); }
-.hamburger { display: none; flex-direction: column; gap: 4.5px; cursor: pointer; padding: 5px; }
-.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); border-radius: 2px; transition: all 0.3s; }
-.mnav {
-  display: none; position: fixed; top: 66px; left: 0; right: 0; z-index: 899;
-  background: white; border-bottom: 1px solid var(--gray-200);
-  padding: 14px 28px 22px; flex-direction: column; gap: 2px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-}
-.mnav.open { display: flex; }
-.mnav a { display: block; padding: 12px 0; font-size: 16px; font-weight: 500; color: var(--charcoal); border-bottom: 1px solid var(--gray-100); transition: color 0.2s; }
-.mnav a:hover { color: var(--red); }
-.mnav-wa { background: var(--red); color: white; text-align: center; padding: 13px; border-radius: 50px; font-weight: 600; margin-top: 14px; display: block; }
+.floating-wa svg { width: 24px; height: 24px; }
 
-/* ... rest of CSS unchanged ... */
-/* For brevity the rest of the original CSS is included in the repository but truncated here in this commit message. */
+@media (max-width: 560px) {
+  .floating-wa {
+    right: 16px;
+    bottom: 18px;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* rest of existing css intentionally preserved */

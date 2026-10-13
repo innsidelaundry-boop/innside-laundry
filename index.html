@@ -3,24 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="InnSide Laundry Bandung menyediakan layanan laundry premium, self service, drop-off, setrika, dan laundry express dengan fasilitas bersih, nyaman, dan cepat.">
-<meta name="keywords" content="laundry bandung, laundry premium bandung, self service laundry bandung, innsidelaundry, innside laundry">
-<meta name="author" content="InnSide Laundry">
-<meta name="theme-color" content="#d70000">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="InnSide Laundry — Premium Laundry Bandung">
-<meta property="og:description" content="Laundry premium dengan layanan cepat, area tunggu nyaman, teknologi modern, dan harga terjangkau di Bandung.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://github.com/innsidelaundry-boop/innside-assets/blob/main/20250928_141101.jpg?raw=true">
-<meta property="og:url" content="https://innsidelaundry-boop.github.io/innside-laundry/">
-<link rel="canonical" href="https://innsidelaundry-boop.github.io/innside-laundry/">
 <title>InnSide Laundry — Premium Laundry Bandung</title>
 <link rel="icon" type="image/png" href="https://github.com/innsidelaundry-boop/innside-assets/blob/main/Logo%201200PX%20-%20White.png?raw=true">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="assets/styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ============================
+   ROOT VARIABLES
+============================ */
 :root {
   --red: #d70000;
   --red-hover: #b50000;
@@ -52,6 +43,9 @@
   --sh-xl: 0 24px 80px rgba(0,0,0,0.16);
 }
 
+/* ============================
+   RESET & BASE
+============================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -66,61 +60,17 @@ img, video { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 button { font-family: var(--sans); cursor: pointer; }
 ul { list-style: none; }
+
 body.lang-id [data-en] { display: none !important; }
 body.lang-en [data-id] { display: none !important; }
+
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 3px; }
 
-.med-modal {
-  display: none; position: fixed; inset: 0; z-index: 9999;
-  background: rgba(0,0,0,0.65); backdrop-filter: blur(8px);
-  align-items: center; justify-content: center; padding: 20px;
-}
-.med-modal.open { display: flex; }
-.med-box {
-  background: white; border-radius: var(--r-lg); padding: 32px;
-  max-width: 480px; width: 100%; max-height: 88vh; overflow-y: auto;
-  box-shadow: var(--sh-xl);
-}
-.med-box h3 {
-  font-family: var(--serif); font-size: 20px; color: var(--charcoal);
-  margin-bottom: 4px;
-}
-.med-box .med-desc { font-size: 13px; color: var(--gray-400); margin-bottom: 22px; }
-.med-tabs { display: flex; gap: 6px; margin-bottom: 20px; }
-.med-tab {
-  border: 1.5px solid var(--gray-200); border-radius: 50px; background: none;
-  padding: 7px 16px; font-size: 12.5px; font-weight: 600; color: var(--gray-500);
-  transition: all 0.2s;
-}
-.med-tab.active { background: var(--charcoal); border-color: var(--charcoal); color: white; }
-.med-field { margin-bottom: 14px; }
-.med-field label {
-  display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; color: var(--gray-400); margin-bottom: 7px;
-}
-.med-field input, .med-field select {
-  width: 100%; border: 1.5px solid var(--gray-200); border-radius: var(--r-sm);
-  padding: 10px 13px; font-family: var(--sans); font-size: 13.5px;
-  color: var(--charcoal); outline: none; transition: border-color 0.2s;
-  background: white;
-}
-.med-field input:focus, .med-field select:focus { border-color: var(--red); }
-.med-actions { display: flex; gap: 8px; margin-top: 22px; }
-.med-apply {
-  flex: 1; background: var(--red); color: white; border: none;
-  padding: 11px; border-radius: 50px; font-size: 14px; font-weight: 600;
-  transition: background 0.2s;
-}
-.med-apply:hover { background: var(--red-hover); }
-.med-cancel {
-  background: var(--gray-100); color: var(--charcoal); border: none;
-  padding: 11px 20px; border-radius: 50px; font-size: 14px; font-weight: 500;
-  transition: background 0.2s;
-}
-.med-cancel:hover { background: var(--gray-200); }
-
+/* ============================
+   NAVIGATION
+============================ */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 900;
   background: rgba(255,255,255,0.93);
@@ -139,7 +89,6 @@ body.lang-en [data-id] { display: none !important; }
   width: 36px; height: 36px; background: transparent; border-radius: 50%; overflow: hidden;
   display: grid; place-items: center;
 }
-.nav-logo-icon svg { width: 20px; height: 20px; }
 .nav-logo-icon img {
   width: 30px; height: 30px; object-fit: contain;
   background: transparent;
@@ -188,6 +137,9 @@ body.lang-en [data-id] { display: none !important; }
 .mnav a:hover { color: var(--red); }
 .mnav-wa { background: var(--red); color: white; text-align: center; padding: 13px; border-radius: 50px; font-weight: 600; margin-top: 14px; display: block; }
 
+/* ============================
+   HERO
+============================ */
 .hero {
   min-height: 100vh; position: relative; overflow: hidden;
   display: flex; flex-direction: column;
@@ -212,30 +164,6 @@ body.lang-en [data-id] { display: none !important; }
     rgba(10,10,10,0.22) 100%
   );
 }
-.hero-deco {
-  position: absolute; right: 7%; top: 50%; transform: translateY(-50%);
-  width: 380px; height: 380px; z-index: 2; pointer-events: none;
-}
-.hero-ring {
-  position: absolute; top: 50%; left: 50%;
-  border-radius: 50%; border: 1px solid rgba(255,255,255,0.07);
-  transform: translate(-50%, -50%);
-}
-.hero-ring-1 { width: 100px; height: 100px; border: 2px solid rgba(215,0,0,0.25); animation: hrspin 20s linear infinite; }
-.hero-ring-2 { width: 180px; height: 180px; border-style: dashed; animation: hrspin 35s linear infinite reverse; }
-.hero-ring-3 { width: 280px; height: 280px; animation: hrspin 55s linear infinite; }
-.hero-ring-4 { width: 380px; height: 380px; border-color: rgba(255,255,255,0.04); }
-.hero-ring-center {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 64px; height: 64px; border-radius: 50%;
-  background: rgba(215,0,0,0.1); border: 1.5px solid rgba(215,0,0,0.3);
-  display: grid; place-items: center;
-  font-size: 26px; animation: hrspin 5s linear infinite;
-}
-@keyframes hrspin {
-  from { transform: translate(-50%,-50%) rotate(0deg); }
-  to { transform: translate(-50%,-50%) rotate(360deg); }
-}
 .hero-content {
   position: relative; z-index: 3;
   max-width: 1200px; margin: 0 auto; padding: 88px 32px 80px;
@@ -250,7 +178,6 @@ body.lang-en [data-id] { display: none !important; }
   animation: floatUp 0.75s var(--ease) both;
 }
 .hero-chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: blink 2s ease-in-out infinite; }
-@keyframes blink { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.7); } }
 .hero h1 {
   font-family: var(--serif); font-size: clamp(40px, 6vw, 82px);
   font-weight: 600; color: white; line-height: 1.08;
@@ -301,205 +228,43 @@ body.lang-en [data-id] { display: none !important; }
 .hero-status-dot.closed { background: #ff4d4d; box-shadow: 0 0 10px rgba(255,77,77,0.8); }
 .hero-status-text { font-size: 14px; font-weight: 600; }
 .hero-status-sub { font-size: 11.5px; opacity: 0.55; margin-top: 2px; }
-.hero-edit {
-  position: absolute; bottom: 26px; right: 32px; z-index: 4;
-  background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.75);
-  padding: 8px 16px; border-radius: 50px; font-size: 12px; font-weight: 500;
-  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
-  transition: all 0.2s;
-}
-.hero-edit:hover { background: rgba(255,255,255,0.18); color: white; }
-@keyframes floatUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-.trust {
-  background: white; border-bottom: 1px solid var(--gray-200);
+/* ============================
+   PREMIUM POLISH
+============================ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(215, 0, 0, 0.10), transparent 26%);
+  z-index: 0;
 }
-.trust-scroll {
-  max-width: 1200px; margin: 0 auto; padding: 0 32px;
-  display: flex; overflow-x: auto; scrollbar-width: none;
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -10%;
+  bottom: -20%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.10), transparent 58%);
+  pointer-events: none;
+  z-index: 1;
 }
-.trust-scroll::-webkit-scrollbar { display: none; }
-.trust-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 20px 30px; flex-shrink: 0;
-  border-right: 1px solid var(--gray-200);
-  transition: background 0.2s;
+.nav-logo-text,
+.title,
+.hero h1,
+.svc-name,
+.rev-name,
+.footer-col-title { letter-spacing: -0.02em; }
+.nav-wa,
+.btn-red,
+.btn-outline-w,
+.btn-wa,
+.floating-wa {
+  box-shadow: 0 12px 30px rgba(215,0,0,0.14);
 }
-.trust-item:last-child { border-right: none; }
-.trust-item:hover { background: var(--gray-100); }
-.trust-ico { width: 40px; height: 40px; background: var(--gray-100); border-radius: 50%; display: grid; place-items: center; font-size: 17px; flex-shrink: 0; }
-.trust-lbl { font-size: 14px; font-weight: 700; color: var(--charcoal); }
-.trust-sub { font-size: 12px; color: var(--gray-400); margin-top: 1px; }
-.gold { color: #f5a623; letter-spacing: 1px; }
-
-section { padding: 96px 0; }
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
-.title { font-family: var(--serif); font-size: clamp(28px, 3.8vw, 52px); font-weight: 600; color: var(--charcoal); line-height: 1.13; letter-spacing: -0.5px; }
-.body-txt { font-size: clamp(15px, 1.3vw, 17px); color: var(--gray-500); line-height: 1.82; margin-top: 18px; font-weight: 300; }
-
-.sr { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-.sr.d1 { transition-delay: 0.08s; }
-.sr.d2 { transition-delay: 0.16s; }
-.sr.d3 { transition-delay: 0.24s; }
-.sr.d4 { transition-delay: 0.32s; }
-.sr.d5 { transition-delay: 0.40s; }
-.sr.d6 { transition-delay: 0.48s; }
-.sr.in { opacity: 1; transform: none; }
-
-.about { background: var(--gray-100); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.about-media { position: relative; }
-.about-media-frame {
-  border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 4/3;
-  background: var(--gray-200); position: relative;
-  box-shadow: var(--sh-xl); cursor: pointer;
-}
-.about-media-frame img, .about-media-frame video { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
-.about-media-frame:hover img, .about-media-frame:hover video { transform: scale(1.04); }
-.about-media-placeholder {
-  position: absolute; inset: 0; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 14px; color: var(--gray-400);
-}
-.about-edit-btn {
-  position: absolute; bottom: 14px; right: 14px;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
-  border: none; border-radius: 50px; padding: 8px 16px;
-  font-size: 12px; font-weight: 600; color: var(--charcoal);
-  display: flex; align-items: center; gap: 6px;
-  box-shadow: var(--sh-md); transition: all 0.2s; cursor: pointer;
-}
-.about-edit-btn:hover { background: white; box-shadow: var(--sh-lg); }
-.about-badge {
-  position: absolute; top: -22px; right: -22px;
-  background: var(--red); color: white; border-radius: 14px;
-  padding: 20px 22px; text-align: center;
-  box-shadow: 0 10px 32px rgba(215,0,0,0.3);
-}
-.about-badge-n { font-family: var(--serif); font-size: 40px; font-weight: 700; line-height: 1; }
-.about-badge-t { font-size: 11px; font-weight: 600; opacity: 0.88; margin-top: 3px; }
-.about-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-top: 34px; }
-.about-chk { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 500; color: var(--charcoal-2); }
-.chk-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--red-dim); display: grid; place-items: center; flex-shrink: 0; }
-
-.services { background: white; }
-.svc-hd { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: end; margin-bottom: 52px; }
-.svc-tabs { display: flex; gap: 4px; border-bottom: 1.5px solid var(--gray-200); margin-bottom: 40px; }
-.svc-tab {
-  background: none; border: none; border-bottom: 2.5px solid transparent;
-  padding: 11px 22px; font-size: 14px; font-weight: 600; color: var(--gray-400);
-  cursor: pointer; transition: all 0.2s; margin-bottom: -1.5px;
-}
-.svc-tab.active { color: var(--charcoal); border-bottom-color: var(--red); }
-.svc-panel { display: none; }
-.svc-panel.active { display: block; }
-.svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr)); gap: 18px; }
-.svc-card {
-  background: var(--gray-100); border-radius: var(--r-lg); padding: 28px;
-  border: 1.5px solid transparent; position: relative; overflow: hidden;
-  transition: all 0.3s var(--ease);
-}
-.svc-card-line {
-  position: absolute; left: 0; top: 0; width: 3px; height: 0; background: var(--red);
-  transition: height 0.35s var(--ease);
-}
-.svc-card:hover { border-color: rgba(215,0,0,0.12); box-shadow: var(--sh-lg); transform: translateY(-3px); }
-.svc-card:hover .svc-card-line { height: 100%; }
-.svc-ico { width: 44px; height: 44px; background: transparent; border-radius: 0; display: grid; place-items: center; font-size: 20px; margin-bottom: 14px; box-shadow: none; }
-.svc-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 3px 10px; border-radius: 50px; background: var(--red-dim); color: var(--red); margin-bottom: 10px; }
-.svc-name { font-size: 15.5px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
-.svc-dur { font-size: 12px; color: var(--gray-400); font-weight: 500; margin-bottom: 14px; }
-.svc-price { display: flex; align-items: baseline; gap: 3px; }
-.svc-cur { font-size: 12px; color: var(--gray-400); }
-.svc-amt { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--charcoal); }
-.svc-unit { font-size: 12px; color: var(--gray-400); }
-.svc-desc { font-size: 13px; color: var(--gray-500); line-height: 1.8; margin-top: 12px; }
-.svc-dark { background: var(--charcoal); }
-.svc-dark .svc-name { color: white; }
-.svc-dark .svc-desc { color: rgba(255,255,255,0.42); }
-.svc-dark .svc-ico { background: transparent; }
-.cs-tag { display: inline-block; background: rgba(215,0,0,0.2); color: #ff8888; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 3px 10px; border-radius: 50px; margin-bottom: 10px; }
-
-.why { background: var(--gray-100); }
-.why-header { text-align: center; max-width: 540px; margin: 0 auto 60px; }
-.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.why-card {
-  background: white; border-radius: var(--r-lg); padding: 30px 22px;
-  text-align: center; border: 1.5px solid transparent;
-  transition: all 0.3s var(--ease);
-}
-.why-card:hover { border-color: rgba(215,0,0,0.1); box-shadow: var(--sh-lg); transform: translateY(-5px); }
-.why-ico-wrap {
-  width: 56px; height: 56px; background: var(--red-dim); border-radius: 16px;
-  display: grid; place-items: center; margin: 0 auto 18px; font-size: 24px;
-  transition: background 0.3s var(--ease), transform 0.3s var(--ease-spring);
-}
-.why-card:hover .why-ico-wrap { background: var(--red); transform: scale(1.1) rotate(-4deg); }
-.why-card h4 { font-size: 15px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
-.why-card p { font-size: 13px; color: var(--gray-500); line-height: 1.65; }
-
-.gallery { background: var(--charcoal); padding: 80px 0; }
-.gallery .eyebrow { color: #ff9999; }
-.gallery .title { color: white; }
-.gallery-hd { margin-bottom: 36px; }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr;
-  grid-template-rows: 218px 218px;
-  gap: 12px;
-}
-.gal-item {
-  border-radius: var(--r-sm); overflow: hidden; position: relative;
-  background: var(--charcoal-3); cursor: pointer;
-}
-.gal-item:first-child { grid-row: 1 / 3; }
-.gal-item img, .gal-item video { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s var(--ease); }
-.gal-item:hover img, .gal-item:hover video { transform: scale(1.07); }
-.gal-ph { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,0.18); font-size: 12px; }
-.gal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
-.gal-item:hover .gal-overlay { background: rgba(0,0,0,0.45); }
-.gal-edit-btn {
-  background: white; border: none; border-radius: 8px; padding: 8px 14px;
-  font-size: 12px; font-weight: 700; cursor: pointer;
-  display: flex; align-items: center; gap: 5px;
-  opacity: 0; transform: scale(0.85); transition: all 0.25s var(--ease-spring);
-}
-.gal-item:hover .gal-edit-btn { opacity: 1; transform: scale(1); }
-
-.reviews { background: white; }
-.reviews-top { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 52px; gap: 20px; flex-wrap: wrap; }
-.reviews-score-box { display: flex; align-items: center; gap: 18px; background: var(--gray-100); border-radius: var(--r-lg); padding: 20px 28px; }
-.reviews-big-num { font-family: var(--serif); font-size: 58px; font-weight: 700; color: var(--charcoal); line-height: 1; }
-.reviews-meta .gold { font-size: 15px; }
-.reviews-meta strong { display: block; font-size: 13px; font-weight: 700; color: var(--charcoal); margin-top: 4px; }
-.reviews-meta span { font-size: 12px; color: var(--gray-400); }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); gap: 18px; }
-.rev-card {
-  background: var(--gray-100); border-radius: var(--r-lg); padding: 28px;
-  display: flex; flex-direction: column; gap: 16px;
-  transition: all 0.3s var(--ease);
-}
-.rev-card:hover { box-shadow: var(--sh-lg); transform: translateY(-3px); }
-.rev-stars { color: #f5a623; font-size: 14px; letter-spacing: 2px; }
-.rev-quote { font-size: 14px; line-height: 1.78; color: var(--gray-500); font-style: italic; flex: 1; }
-.rev-footer { display: flex; align-items: center; gap: 11px; }
-.rev-avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; color: white; font-weight: 700; font-size: 15px; flex-shrink: 0; }
-.rev-name { font-size: 13.5px; font-weight: 700; color: var(--charcoal); }
-.rev-platform { font-size: 11.5px; color: var(--gray-400); }
-.rev-g { margin-left: auto; background: rgba(66,133,244,0.1); color: #4285f4; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 50px; flex-shrink: 0; }
-
-.contact { background: var(--gray-100); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: start; }
-.contact-items { display: flex; flex-direction: column; gap: 22px; margin-top: 38px; }
-.c-item { display: flex; align-items: flex-start; gap: 15px; }
-.c-ico { width: 46px; height: 46px; background: white; border-radius: 11px; display: grid; place-items: center; font-size: 19px; flex-shrink: 0; box-shadow: var(--sh-sm); }
-.c-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 5px; }
-.c-val { font-size: 14.5px; color: var(--charcoal); line-height: 1.68; }
-.c-val a { color: var(--red); font-weight: 600; }
-.hours-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 5px; }
-.hours-day { font-size: 11.5px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; }
-.hours-time { font-size: 15px; font-weight: 600; color: var(--charcoal); margin-top: 1px; }
 .btn-wa {
   display: inline-flex; align-items: center; gap: 10px;
   background: #25d366; color: white; border: none;
@@ -508,71 +273,45 @@ section { padding: 96px 0; }
   transition: all 0.25s var(--ease);
 }
 .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.3); }
-.map-frame { border-radius: var(--r-xl); overflow: hidden; height: 430px; box-shadow: var(--sh-xl); }
-.map-frame iframe { width: 100%; height: 100%; border: none; display: block; }
-.map-cta { display: block; text-align: center; margin-top: 12px; font-size: 13px; color: var(--red); font-weight: 600; transition: opacity 0.2s; }
-.map-cta:hover { opacity: 0.7; }
+.floating-wa {
+  position: fixed;
+  right: 22px;
+  bottom: 26px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #2ae06a 0%, #1bbf5c 100%);
+  color: white;
+  border: 4px solid rgba(255,255,255,0.95);
+  box-shadow: 0 18px 40px rgba(18, 185, 85, 0.32);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.floating-wa:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 22px 48px rgba(18,185,85,0.42);
+}
+.floating-wa svg { width: 24px; height: 24px; }
 
-footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68px 0 32px; }
-.footer-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 52px; }
-.footer-brand-desc { font-size: 13.5px; line-height: 1.78; max-width: 245px; margin-top: 15px; color: rgba(255,255,255,0.45); }
-.footer-socials { display: flex; gap: 9px; margin-top: 22px; }
-.social-btn {
-  width: 36px; height: 36px; border-radius: 9px;
-  background: rgba(255,255,255,0.07); display: grid; place-items: center;
-  color: rgba(255,255,255,0.5); transition: all 0.2s;
-}
-.social-btn:hover { background: var(--red); color: white; }
-.footer-col-title { font-size: 10.5px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.22); margin-bottom: 18px; }
-.footer-col ul { display: flex; flex-direction: column; gap: 11px; }
-.footer-col ul a { font-size: 13.5px; color: rgba(255,255,255,0.48); transition: color 0.2s; }
-.footer-col ul a:hover { color: white; }
-.footer-bot { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.footer-bot p { font-size: 12.5px; }
-.footer-bot-links { display: flex; gap: 22px; }
-.footer-bot-links a { font-size: 12.5px; color: rgba(255,255,255,0.32); transition: color 0.2s; }
-.footer-bot-links a:hover { color: rgba(255,255,255,0.65); }
-
-@media (max-width: 1080px) {
-  .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 820px) {
-  .nav-links { display: none; }
-  .nav-wa { display: none; }
-  .hamburger { display: flex; }
-  section { padding: 72px 0; }
-  .about-grid { grid-template-columns: 1fr; gap: 44px; }
-  .about-badge { display: none; }
-  .svc-hd { grid-template-columns: 1fr; gap: 16px; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .reviews-top { flex-direction: column; align-items: flex-start; }
-  .hero-deco { display: none; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .gal-item:first-child { grid-row: auto; grid-column: 1 / 3; height: 210px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-bot { flex-direction: column; text-align: center; }
-}
 @media (max-width: 560px) {
-  .wrap { padding: 0 18px; }
-  .nav-wrap { padding: 0 18px; }
-  .hero-content { padding: 72px 18px 60px; }
-  .hero-bottom { padding: 0 18px 44px; }
-  .hero-edit { right: 18px; }
-  .why-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .gallery-grid { grid-template-columns: 1fr; position: relative; height: 190px; }
-  .gallery-grid .gal-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.6s var(--ease); pointer-events: none; }
-  .gallery-grid .gal-item.active { opacity: 1; pointer-events: auto; z-index: 2; }
-  .gallery-grid .gal-overlay { display: none; }
-  .gal-item:first-child { grid-column: 1; height: 190px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .svc-grid { grid-template-columns: 1fr; }
-  .reviews-grid { grid-template-columns: 1fr; }
+  .floating-wa {
+    right: 16px;
+    bottom: 18px;
+    width: 54px;
+    height: 54px;
+  }
 }
+
+@keyframes blink { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.7); } }
+@keyframes floatUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body class="lang-id">
 
+<!-- ==================== MEDIA MODAL ==================== -->
 <div class="med-modal" id="medModal">
   <div class="med-box">
     <h3>Edit Media</h3>
@@ -607,6 +346,7 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
   </div>
 </div>
 
+<!-- ==================== NAV ==================== -->
 <nav class="nav" id="mainNav">
   <div class="nav-wrap">
     <a href="#home" class="nav-logo">
@@ -623,21 +363,22 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
       <li><a href="#contact" data-id>Kontak</a><a href="#contact" data-en>Contact</a></li>
     </ul>
     <div class="nav-controls">
-      <div class="lang-toggle" aria-label="Language switcher">
-        <button class="lang-btn on" type="button" data-lang="id" aria-label="Switch language to Indonesian" onclick="setLang('id')">ID</button>
-        <button class="lang-btn" type="button" data-lang="en" aria-label="Switch language to English" onclick="setLang('en')">EN</button>
+      <div class="lang-toggle">
+        <button class="lang-btn on" onclick="setLang('id')">ID</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
       </div>
       <a href="https://wa.me/6285117568408" target="_blank" class="nav-wa">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7c0 1.11.295 2.148.81 3.038L1 13l3.048-.797A5.98 5.98 0 007 13c3.314 0 6-2.686 6-6s-2.686-6-6-6z" stroke="white" stroke-width="1.3"/></svg>
         WhatsApp
       </a>
-      <div class="hamburger" onclick="toggleMnav()" id="hbg" aria-label="Open menu" role="button" tabindex="0">
+      <div class="hamburger" onclick="toggleMnav()" id="hbg">
         <span></span><span></span><span></span>
       </div>
     </div>
   </div>
 </nav>
 
+<!-- Mobile nav -->
 <div class="mnav" id="mnavEl">
   <a href="#about" onclick="closeMnav()"><span data-id>Tentang Kami</span><span data-en>About Us</span></a>
   <a href="#services" onclick="closeMnav()"><span data-id>Layanan</span><span data-en>Services</span></a>
@@ -647,6 +388,7 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
   <a href="https://wa.me/6285117568408" target="_blank" class="mnav-wa" onclick="closeMnav()">WhatsApp Us</a>
 </div>
 
+<!-- ==================== HERO ==================== -->
 <section class="hero" id="home">
   <div class="hero-bg">
     <img id="heroBgImg" class="hero-bg-img"
@@ -700,519 +442,6 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
   </div>
 </section>
 
-<div class="trust">
-  <div class="trust-scroll">
-    <div class="trust-item">
-      <div class="trust-ico">&#11088;</div>
-      <div>
-        <div class="trust-lbl"><span class="gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0</div>
-        <div class="trust-sub">138+ <span data-id>Ulasan</span><span data-en>Reviews</span></div>
-      </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-ico">&#128522;</div>
-      <div>
-        <div class="trust-lbl" data-id>Staf Ramah</div>
-        <div class="trust-lbl" data-en>Friendly Staff</div>
-        <div class="trust-sub" data-id>Siap Membantu</div>
-        <div class="trust-sub" data-en>Always Helpful</div>
-      </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-ico">&#9889;</div>
-      <div>
-        <div class="trust-lbl" data-id>Proses Cepat</div>
-        <div class="trust-lbl" data-en>Fast Service</div>
-        <div class="trust-sub">Express 4&ndash;8 Jam</div>
-      </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-ico">&#127359;</div>
-      <div>
-        <div class="trust-lbl" data-id>Parkir Luas</div>
-        <div class="trust-lbl" data-en>Spacious Parking</div>
-        <div class="trust-sub" data-id>Gratis</div>
-        <div class="trust-sub" data-en>Free</div>
-      </div>
-    </div>
-    <div class="trust-item">
-      <div class="trust-ico">&#9749;</div>
-      <div>
-        <div class="trust-lbl" data-id>Area Tunggu Nyaman</div>
-        <div class="trust-lbl" data-en>Comfortable Waiting</div>
-        <div class="trust-sub" data-id>Bersih &amp; Rileks</div>
-        <div class="trust-sub" data-en>Clean &amp; Relaxing</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-media sr">
-        <div class="about-media-frame" id="aboutBox">
-          <div class="about-media-placeholder" id="aboutPh">
-            <img src="https://github.com/innsidelaundry-boop/innside-assets/blob/main/IG%20Post%20Gratis%20Cuci.png?raw=true"
-              alt="InnSide Laundry interior"
-              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
-              id="aboutDefaultImg">
-          </div>
-          <img id="aboutUserImg" src="" alt="About" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-          <video id="aboutUserVid" autoplay muted loop playsinline style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
-        </div>
-        <div class="about-badge">
-          <div class="about-badge-n">5&#9733;</div>
-          <div class="about-badge-t">138+ Reviews</div>
-        </div>
-      </div>
-      <div>
-        <p class="eyebrow sr" data-id>Tentang Kami</p>
-        <p class="eyebrow sr" data-en>About Us</p>
-        <h2 class="title sr d1">
-          <span data-id>Rasakan Pengalaman<br>Laundry yang Berbeda</span>
-          <span data-en>Experience Laundry<br>Differently</span>
-        </h2>
-        <p class="body-txt sr d2">
-          <span data-id>InnSide Laundry memadukan kenyamanan, kebersihan, dan kepuasan pelanggan. Nikmati pengalaman laundry yang mulus dengan mesin premium, bantuan staf yang ramah, dan fasilitas yang nyaman selama menunggu.</span>
-          <span data-en>InnSide Laundry combines convenience, cleanliness, and customer comfort. Customers can enjoy a smooth laundry experience with premium machines, friendly assistance, and comfortable facilities while waiting.</span>
-        </p>
-        <div class="about-checks sr d3">
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Mesin Premium</span><span data-en>Premium Machines</span></div>
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Lingkungan Bersih</span><span data-en>Clean Environment</span></div>
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Proses Cepat</span><span data-en>Fast Process</span></div>
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Harga Terjangkau</span><span data-en>Affordable Pricing</span></div>
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Area Tunggu Nyaman</span><span data-en>Comfortable Waiting</span></div>
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Parkir Luas</span><span data-en>Spacious Parking</span></div>
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Staf Ramah &amp; Profesional</span><span data-en>Friendly &amp; Professional Staff</span></div>
-          <div class="about-chk"><div class="chk-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#d70000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span data-id>Sistem Cashless Modern</span><span data-en>Modern Cashless System</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="svc-hd">
-      <div>
-        <p class="eyebrow sr" data-id>Layanan Kami</p>
-        <p class="eyebrow sr" data-en>Our Services</p>
-        <h2 class="title sr d1">
-          <span data-id>Semua Kebutuhan<br>Laundry Anda</span>
-          <span data-en>All Your Laundry<br>Needs</span>
-        </h2>
-      </div>
-      <p class="body-txt sr d2" style="margin-top:0">
-        <span data-id>Pilih layanan yang paling cocok. Semuanya dirancang untuk hasil terbaik dengan pengalaman yang nyaman dan mudah.</span>
-        <span data-en>Choose the service that suits you. All designed for great results with a comfortable, effortless experience.</span>
-      </p>
-      <p class="body-txt sr d2" style="margin-top:16px; color: var(--gray-600); font-size: 14px;">
-        <span data-id>* Harga berdasarkan kapasitas optimal per mesin, tambahan layanan Add-on lainnya akan diberitahukan apabila diperlukan.</span>
-        <span data-en>* Prices are based on optimal machine capacity per machine; additional Add-on services will be advised if needed.</span>
-      </p>
-    </div>
-
-    <div class="svc-tabs">
-      <button class="svc-tab active" onclick="switchSvcTab(this,'drop')">Drop-Off</button>
-      <button class="svc-tab" onclick="switchSvcTab(this,'self')">Self Service</button>
-      <button class="svc-tab" onclick="switchSvcTab(this,'addon')">
-        <span data-id>Tambahan &amp; Lainnya</span>
-        <span data-en>Add-Ons &amp; More</span>
-      </button>
-    </div>
-
-    <div class="svc-panel active" id="svc-drop">
-      <div class="svc-grid">
-        <div class="svc-card sr">
-          <div class="svc-card-line"></div>
-          <span class="svc-badge">Express </span>
-          <div class="svc-name" data-id>Normal Wash &ndash; 8 Jam</div>
-          <div class="svc-name" data-en>Normal Wash &ndash; 8 Hours</div>
-          <div class="svc-dur" data-id>Layanan lengkap Cuci–Kering–Lipat–Packing dalam 8 jam. Cocok untuk drop-off pagi/siang hari.</div>
-          <div class="svc-dur" data-en>Full Wash–Dry–Fold–Pack service within 8 hours. Ideal for morning/afternoon drop-off.</div>
-          <p class="svc-desc" data-id>Gratis: Detergen, Softener, Packing & Plastik Laundry. Layanan lengkap: Cuci – Kering – Lipat – Packing. Cocok untuk persiapan esok hari.</p>
-          <p class="svc-desc" data-en>Free detergent, softener, packing & laundry plastic. Full service: Wash – Dry – Fold – Pack. Great for next-day preparation.</p>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">60.000</span></div>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20pesan%20Express%20Same%20Day%20-%20Normal%20Wash%208%20Jam.%20Mohon%20info%20harga%20dan%20detail%20layanan." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d1">
-          <div class="svc-card-line"></div>
-          <span class="svc-badge">Super Express</span>
-          <div class="svc-name" data-id>Normal Wash &ndash; 4 Jam</div>
-          <div class="svc-name" data-en>Normal Wash &ndash; 4 Hours</div>
-          <div class="svc-dur" data-id>Layanan prioritas Cuci–Kering–Lipat–Packing dalam 4 jam. Untuk kebutuhan urgent.</div>
-          <div class="svc-dur" data-en>Priority Wash–Dry–Fold–Pack service within 4 hours. For urgent needs.</div>
-          <p class="svc-desc" data-id>⚡ Prioritas pengerjaan! Gratis: Detergen, Softener, Packing & Plastik Laundry. Cocok untuk pakaian kerja sore/malam, acara mendadak.</p>
-          <p class="svc-desc" data-en>⚡ Priority handling! Free detergent, softener, packing & laundry plastic. Great for evening work clothes and last-minute events.</p>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">70.000</span></div>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20pesan%20Super%20Express%20-%20Normal%20Wash%204%20Jam.%20Mohon%20info%20harga%20dan%20detail%20layanan." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d2">
-          <div class="svc-card-line"></div>
-          <span class="svc-badge">Express</span>
-          <div class="svc-name" data-id>Super Wash &ndash; 8 Jam</div>
-          <div class="svc-name" data-en>Super Wash &ndash; 8 Hours</div>
-          <div class="svc-dur" data-id>Layanan Super Wash premium dengan Free Antar-Jemput* radius 3 KM. Siklus pencucian lebih intensif untuk pakaian bernoda banyak.</div>
-          <div class="svc-dur" data-en>Premium Super Wash service with Free Pickup & Delivery* within 3 KM. Intensified wash cycle for heavily stained garments.</div>
-          <p class="svc-desc" data-id>Free Antar-Jemput* radius 3 KM. Gratis: Detergen, Softener, Packing & Plastik Laundry. Extra bersih, higienis maksimal & fresh.</p>
-          <p class="svc-desc" data-en>Free Pickup & Delivery* within 3 KM. Free detergent, softener, packing & laundry plastic. Extra clean, maximally hygienic & fresh.</p>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">100.000</span></div>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20pesan%20Super%20Wash%20Same%20Day%20-%20Super%20Wash%208%20Jam.%20Mohon%20info%20harga%20dan%20detail%20layanan." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d3">
-          <div class="svc-card-line"></div>
-          <span class="svc-badge">Super Express</span>
-          <div class="svc-name" data-id>Super Wash &ndash; 4 Jam</div>
-          <div class="svc-name" data-en>Super Wash &ndash; 4 Hours</div>
-          <div class="svc-dur" data-id>Layanan Super Wash prioritas dengan Free Antar-Jemput* radius 3 KM. Pengerjaan tercepat untuk kebutuhan mendesak.</div>
-          <div class="svc-dur" data-en>Priority Super Wash with Free Pickup & Delivery* within 3 KM. Fastest turnaround for urgent needs.</div>
-          <p class="svc-desc" data-id>⚡ Prioritas pengerjaan! Free Antar-Jemput* radius 3 KM. Cocok untuk tamu hotel & acara mendadak.</p>
-          <p class="svc-desc" data-en>⚡ Priority handling! Free Pickup & Delivery* within 3 KM. Perfect for hotel guests and last-minute events.</p>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">110.000</span></div>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20pesan%20Super%20Wash%20Express%20-%20Super%20Wash%204%20Jam.%20Mohon%20info%20harga%20dan%20detail%20layanan." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="svc-panel" id="svc-self">
-      <div class="svc-grid">
-        <div class="svc-card sr">
-          <div class="svc-card-line"></div>
-          <div class="svc-name">Super Wash</div>
-          <div class="svc-dur">&#9203; &plusmn;43 <span data-id>menit</span><span data-en>min</span></div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">22.000</span></div>
-          <p class="svc-desc" data-id>Siklus pencucian premium dengan mesin LG Commercial Heavy Duty. Putaran lebih kuat dan lebih lama dengan kecepatan tinggi. Cocok untuk: Jeans, handuk, sprei, pakaian tebal/lebih kotor. Extra bersih lebih optimal, higienis maksimal & fresh. Mesin LG Commercial Heavy Duty.</p>
-          <p class="svc-desc" data-en>Premium wash cycle with LG Commercial Heavy Duty machine. Stronger, longer spin at high speed. Suitable for: jeans, towels, sheets, heavy or soiled garments. Extra clean, maximally hygienic & fresh. LG Commercial Heavy Duty machine.</p>
-        </div>
-        <div class="svc-card sr d1">
-          <div class="svc-card-line"></div>
-          <div class="svc-name">Normal Wash</div>
-          <div class="svc-dur">&#9203; &plusmn;30 <span data-id>menit</span><span data-en>min</span></div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">16.000</span></div>
-          <p class="svc-desc" data-id>Siklus pencucian standar dengan mesin LG Commercial Heavy Duty. Putaran seimbang dengan kecepatan sedang. Cocok untuk: pakaian sehari-hari (baju, celana, kaos, seragam). Bersih higienis & segar. Aman untuk berbagai jenis kain.</p>
-          <p class="svc-desc" data-en>Standard wash cycle with LG Commercial Heavy Duty machine. Balanced spin at medium speed. Suitable for everyday clothing (shirts, pants, tees, uniforms). Clean, hygienic & fresh. Safe for many fabric types.</p>
-        </div>
-        <div class="svc-card sr d2">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Drying &ndash; High Temperature</div>
-          <div class="svc-name" data-en>Drying &ndash; High Temperature</div>
-          <div class="svc-dur">&#9203; &plusmn;45 <span data-id>menit</span><span data-en>min</span></div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">22.000</span></div>
-          <p class="svc-desc" data-id>Suhu tinggi (high heat) untuk mempercepat proses kering. Cocok untuk pakaian tebal dan berat. Cocok untuk: handuk, jeans, jaket, sprei, selimut. Cucian langsung kering sempurna. Higienis, cocok saat cuaca lembap/hujan.</p>
-          <p class="svc-desc" data-en>High heat to speed up drying. Ideal for thick and heavy garments. Suitable for: towels, jeans, jackets, sheets, blankets. Clothes dry perfectly. Hygienic, great for humid or rainy weather.</p>
-        </div>
-        <div class="svc-card sr d3">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Drying &ndash; Medium Temperature</div>
-          <div class="svc-name" data-en>Drying &ndash; Medium Temperature</div>
-          <div class="svc-dur">&#9203; &plusmn;37 <span data-id>menit</span><span data-en>min</span></div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">18.000</span></div>
-          <p class="svc-desc" data-id>Suhu sedang untuk pengeringan merata. Fleksibel dan aman untuk mayoritas jenis cucian. Cocok untuk: kaos, celana, seragam, kain tebal–sedang. Pengeringan merata & efisien. Lebih aman dibanding high temperature.</p>
-          <p class="svc-desc" data-en>Medium heat for even drying. Flexible and safe for most laundry types. Suitable for: tees, pants, uniforms, medium-thick fabrics. Even, efficient drying. Safer than high temperature.</p>
-        </div>
-        <div class="svc-card sr d2">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Drying &ndash; Low Temperature</div>
-          <div class="svc-name" data-en>Drying &ndash; Low Temperature</div>
-          <div class="svc-dur">&#9203; &plusmn;24 <span data-id>menit</span><span data-en>min</span></div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">12.000</span></div>
-          <p class="svc-desc" data-id>Suhu rendah untuk menjaga kain tetap awet. Mengeringkan dengan lembut tanpa risiko merusak kain. Cocok untuk: pakaian tipis, baju dalam, hijab, bahan sintetis. Aman untuk pakaian sensitif panas. Tetap higienis dan rapi.</p>
-          <p class="svc-desc" data-en>Low heat to preserve fabric durability. Gently dries without damage risk. Suitable for: thin garments, underwear, hijabs, synthetic materials. Safe for heat-sensitive clothing. Keeps laundry hygienic and neat.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="svc-panel" id="svc-addon">
-      <div class="svc-grid">
-        <div class="svc-card sr">
-          <div class="svc-card-line"></div>
-          <div class="svc-name">Super Wash Add-On</div>
-          <div class="svc-dur">&#9203; &plusmn;21 <span data-id>menit</span><span data-en>min</span></div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">12.000</span></div>
-          <p class="svc-desc" data-id>Tambahan Super Wash + Suhu Tinggi untuk drop-off normal wash.</p>
-          <p class="svc-desc" data-en>Add Super Wash + High Temp to your normal wash drop-off.</p>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20menambahkan%20Super%20Wash%20Add-On." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d1">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Setrika &ndash; Reguler</div>
-          <div class="svc-name" data-en>Ironing &ndash; Regular</div>
-          <div class="svc-dur" data-id>Min. 3 Kg &middot; Selesai 24 Jam</div>
-          <div class="svc-dur" data-en>Min. 3 Kg &middot; Ready in 24 Hours</div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">5.000</span><span class="svc-unit">/Kg</span></div>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20menambah%20layanan%20Setrika%20Reguler." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d2">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Setrika &ndash; Express</div>
-          <div class="svc-name" data-en>Ironing &ndash; Express</div>
-          <div class="svc-dur" data-id>Min. 3 Kg &middot; Selesai 8 Jam</div>
-          <div class="svc-dur" data-en>Min. 3 Kg &middot; Ready in 8 Hours</div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">10.000</span><span class="svc-unit">/Kg</span></div>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20menambah%20layanan%20Setrika%20Express." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d3">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Setrika &ndash; Super Ekspres</div>
-          <div class="svc-name" data-en>Ironing &ndash; Super Express</div>
-          <div class="svc-dur" data-id>Min. 3 Kg &middot; Selesai 4 Jam</div>
-          <div class="svc-dur" data-en>Min. 3 Kg &middot; Ready in 4 Hours</div>
-          <div class="svc-price"><span class="svc-cur">IDR</span><span class="svc-amt">15.000</span><span class="svc-unit">/Kg</span></div>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20menambah%20layanan%20Setrika%20Super%20Ekspres." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d3">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Toko Perlengkapan Laundry</div>
-          <div class="svc-name" data-en>Laundry Essentials Shop</div>
-          <p class="svc-desc" data-id>Deterjen, pewangi, kantong laundry, dan kebutuhan lainnya tersedia langsung di sini.</p>
-          <p class="svc-desc" data-en>Detergent, softener, laundry bags, and more — all available on-site.</p>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20informasi%20Toko%20Perlengkapan%20Laundry." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card sr d1">
-          <div class="svc-card-line"></div>
-          <div class="svc-name" data-id>Area Minuman</div>
-          <div class="svc-name" data-en>Beverage Area</div>
-          <p class="svc-desc" data-id>Nikmati minuman segar sambil menunggu cucian selesai di area tunggu yang nyaman.</p>
-          <p class="svc-desc" data-en>Enjoy refreshing drinks while waiting for your laundry in our comfortable area.</p>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20informasi%20Area%20Minuman." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-        <div class="svc-card svc-dark sr d2">
-          <div class="svc-card-line"></div>
-          <span class="cs-tag">Coming Soon</span>
-          <div class="svc-name" data-id>Pengalaman Cafe</div>
-          <div class="svc-name" data-en>Cafe Experience</div>
-          <p class="svc-desc" data-id>Segera hadir. Nikmati suasana cafe lengkap sambil mencuci pakaian Anda di InnSide.</p>
-          <p class="svc-desc" data-en>Coming soon. A full cafe experience while doing your laundry at InnSide.</p>
-          <a href="https://wa.me/6285117568408?text=Halo%20InnSide%20Laundry%2C%20saya%20ingin%20informasi%20Pengalaman%20Cafe." target="_blank" class="btn-wa">Pesan via WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="why" id="why">
-  <div class="wrap">
-    <div class="why-header">
-      <p class="eyebrow sr" data-id>Kenapa InnSide Laundry?</p>
-      <p class="eyebrow sr" data-en>Why InnSide?</p>
-      <h2 class="title sr d1">
-        <span data-id>Dirancang untuk<br>Kenyamanan Anda</span>
-        <span data-en>Designed for<br>Your Comfort</span>
-      </h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card sr"><div class="why-ico-wrap">&#128522;</div><h4 data-id>Staf Ramah</h4><h4 data-en>Friendly Staff</h4><p data-id>Tim kami selalu siap membantu dengan tulus dan senyum yang hangat.</p><p data-en>Our team is genuinely ready to help with warmth and a kind smile.</p></div>
-      <div class="why-card sr d1"><div class="why-ico-wrap">&#10024;</div><h4 data-id>Lingkungan Bersih</h4><h4 data-en>Clean Environment</h4><p data-id>Fasilitas selalu terjaga bersih, rapi, dan higienis setiap saat.</p><p data-en>Facilities always kept clean, tidy, and hygienic at all times.</p></div>
-      <div class="why-card sr d2"><div class="why-ico-wrap">&#9889;</div><h4 data-id>Proses Cepat</h4><h4 data-en>Fast Process</h4><p data-id>Layanan ekspres tersedia. Cucian selesai dalam 4 hingga 8 jam.</p><p data-en>Express service available. Laundry done in just 4 to 8 hours.</p></div>
-      <div class="why-card sr d3"><div class="why-ico-wrap">&#127942;</div><h4 data-id>Mesin Premium</h4><h4 data-en>Premium Machines</h4><p data-id>Mesin berteknologi tinggi untuk hasil cucian dan pengeringan terbaik.</p><p data-en>Advanced machines for the best wash and dry results every time.</p></div>
-      <div class="why-card sr d1"><div class="why-ico-wrap">&#128715;</div><h4 data-id>Area Tunggu Nyaman</h4><h4 data-en>Comfortable Waiting</h4><p data-id>Tempat duduk nyaman, wifi, dan minuman tersedia saat menunggu.</p><p data-en>Comfortable seating, wifi, and drinks available while you wait.</p></div>
-      <div class="why-card sr d2"><div class="why-ico-wrap">&#127359;</div><h4 data-id>Parkir Luas</h4><h4 data-en>Spacious Parking</h4><p data-id>Area parkir luas dan mudah diakses untuk semua tamu kami.</p><p data-en>Ample and easily accessible parking available for all guests.</p></div>
-      <div class="why-card sr d3"><div class="why-ico-wrap">&#128176;</div><h4 data-id>Harga Terjangkau</h4><h4 data-en>Affordable Pricing</h4><p data-id>Kualitas premium dengan harga yang transparan dan tidak mengejutkan.</p><p data-en>Premium quality with transparent, straightforward pricing.</p></div>
-      <div class="why-card sr d1"><div class="why-ico-wrap">&#127775;</div><h4 data-id>Pengalaman Mulus</h4><h4 data-en>Smooth Experience</h4><p data-id>Dari masuk hingga selesai, semuanya dirancang agar semudah mungkin.</p><p data-en>From drop-off to pick-up, everything designed to be effortless.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <div class="gallery-hd">
-      <p class="eyebrow">Gallery</p>
-      <h2 class="title sr">
-        <span data-id>Lihat Fasilitas Kami</span>
-        <span data-en>See Our Facilities</span>
-      </h2>
-    </div>
-    <div class="gallery-grid">
-      <div class="gal-item" id="images/gallery-1">
-        <img src="https://raw.githubusercontent.com/innsidelaundry-boop/innside-assets/main/Ready%20to%20Wash%20%26%20Dry.mp4" alt="Laundry Facade" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        <div class="gal-overlay"></div>
-      </div>
-      <div class="gal-item" id="images/gallery-2">
-        <img src="https://github.com/innsidelaundry-boop/innside-assets/blob/main/Facade%20-%20InnSide%20Laundry.JPG?raw=true" alt="Laundry Machine" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        <div class="gal-overlay"></div>
-      </div>
-      <div class="gal-item" id="images/gallery-3">
-        <img src="https://github.com/innsidelaundry-boop/innside-assets/blob/main/Couple%20Laundry.png?raw=true" alt="Washing Machine" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        <div class="gal-overlay"></div>
-      </div>
-      <div class="gal-item" id="images/gallery-4">
-        <img src="https://github.com/innsidelaundry-boop/innside-assets/blob/main/20250928_134414.jpg?raw=true" alt="Scan QR" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        <div class="gal-overlay"></div>
-      </div>
-      <div class="gal-item" id="images/gallery-5">
-        <img src="https://github.com/innsidelaundry-boop/innside-assets/blob/main/Join%20Member%20Now.png?raw=true" alt="Dryer Machine" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        <div class="gal-overlay"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="reviews" id="reviews">
-  <div class="wrap">
-    <div class="reviews-top">
-      <div>
-        <p class="eyebrow sr" data-id>Ulasan Pelanggan</p>
-        <p class="eyebrow sr" data-en>Customer Reviews</p>
-        <h2 class="title sr d1">
-          <span data-id>Apa Kata Mereka</span>
-          <span data-en>What They Say</span>
-        </h2>
-      </div>
-      <div class="reviews-score-box sr d2">
-        <div class="reviews-big-num">5.0</div>
-        <div class="reviews-meta">
-          <div class="gold">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <strong data-id>138+ Ulasan</strong>
-          <strong data-en>138+ Reviews</strong>
-          <span>Google Maps</span>
-        </div>
-      </div>
-    </div>
-    <div class="reviews-grid">
-      <div class="rev-card sr">
-        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="rev-quote" data-id>&ldquo;Staf dan pemiliknya sangat membantu dan ramah sekali. Pengalaman yang menyenangkan dari awal sampai selesai.&rdquo;</p>
-        <p class="rev-quote" data-en>&ldquo;Staff and owner were really helpful and super friendly. A pleasant experience from start to finish.&rdquo;</p>
-        <div class="rev-footer">
-          <div class="rev-avatar" style="background:#d70000">R</div>
-          <div>
-            <div class="rev-name">Rizki A.</div>
-            <div class="rev-platform">Tamu Hotel</div>
-          </div>
-          <span class="rev-g">G</span>
-        </div>
-      </div>
-      <div class="rev-card sr d1">
-        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="rev-quote" data-id>&ldquo;Pelayanannya luar biasa dan sangat membantu. Tempatnya bersih, nyaman, dan prosesnya cepat.&rdquo;</p>
-        <p class="rev-quote" data-en>&ldquo;Service was superb and very helpful. The place is clean, comfortable, and the process was fast.&rdquo;</p>
-        <div class="rev-footer">
-          <div class="rev-avatar" style="background:#4285f4">S</div>
-          <div>
-            <div class="rev-name">Sari M.</div>
-            <div class="rev-platform">Mahasiswi</div>
-          </div>
-          <span class="rev-g">G</span>
-        </div>
-      </div>
-      <div class="rev-card sr d2">
-        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="rev-quote" data-id>&ldquo;Harganya sangat wajar dengan proses yang lancar. Tidak perlu khawatir soal cucian lagi.&rdquo;</p>
-        <p class="rev-quote" data-en>&ldquo;Price is very reasonable with a smooth process. No more worrying about laundry.&rdquo;</p>
-        <div class="rev-footer">
-          <div class="rev-avatar" style="background:#34a853">B</div>
-          <div>
-            <div class="rev-name">Budi P.</div>
-            <div class="rev-platform">Pekerja</div>
-          </div>
-          <span class="rev-g">G</span>
-        </div>
-      </div>
-      <div class="rev-card sr d3">
-        <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="rev-quote" data-id>&ldquo;Rasanya seperti laundry di luar negeri. Bersih, modern, dan sangat nyaman di dalam. Recommended!&rdquo;</p>
-        <p class="rev-quote" data-en>&ldquo;Feels like doing laundry abroad. Clean, modern, and very comfortable inside. Highly recommended!&rdquo;</p>
-        <div class="rev-footer">
-          <div class="rev-avatar" style="background:#fbbc05">A</div>
-          <div>
-            <div class="rev-name">Anisa D.</div>
-            <div class="rev-platform">Ibu Rumah Tangga</div>
-          </div>
-          <span class="rev-g">G</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="contact-grid">
-      <div>
-        <p class="eyebrow sr" data-id>Hubungi Kami</p>
-        <p class="eyebrow sr" data-en>Get in Touch</p>
-        <h2 class="title sr d1">
-          <span data-id>Kami Siap<br>Membantu Anda</span>
-          <span data-en>We're Here<br>for You</span>
-        </h2>
-        <div class="contact-items">
-          <div class="c-item sr d1">
-            <div class="c-ico">&#128205;</div>
-            <div>
-              <div class="c-lbl" data-id>Alamat</div>
-              <div class="c-lbl" data-en>Address</div>
-              <div class="c-val">
-                InnSide Laundry<br>
-                Jl. Tamansari No.44, Tamansari,<br>
-                Bandung Wetan, Bandung,<br>
-                West Java 40116
-              </div>
-            </div>
-          </div>
-          <div class="c-item sr d2">
-            <div class="c-ico">&#128222;</div>
-            <div>
-              <div class="c-lbl" data-id>Telepon / WhatsApp</div>
-              <div class="c-lbl" data-en>Phone / WhatsApp</div>
-              <div class="c-val">
-                <a href="tel:+6285117568408">0851-1756-8408</a>
-              </div>
-            </div>
-          </div>
-          <div class="c-item sr d3">
-            <div class="c-ico">&#128336;</div>
-            <div>
-              <div class="c-lbl" data-id>Jam Operasional</div>
-              <div class="c-lbl" data-en>Business Hours</div>
-              <div class="hours-2col">
-                <div class="hours-row" data-day-start="0" data-day-end="4" data-open="07:00" data-close="22:00">
-                  <div class="hours-day" data-id>Minggu &ndash; Kamis</div>
-                  <div class="hours-day" data-en>Sunday &ndash; Thursday</div>
-                  <div class="hours-time">07:00 &ndash; 22:00</div>
-                </div>
-                <div class="hours-row" data-day-start="5" data-day-end="6" data-open="07:00" data-close="23:00">
-                  <div class="hours-day" data-id>Jumat &ndash; Sabtu</div>
-                  <div class="hours-day" data-en>Friday &ndash; Saturday</div>
-                  <div class="hours-time">07:00 &ndash; 23:00</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="c-item sr d4">
-            <div class="c-ico">&#128139;</div>
-            <div>
-              <div class="c-lbl">Instagram</div>
-              <div class="c-val">
-                <a href="https://www.instagram.com/innsidelaundry/" target="_blank">@innsidelaundry</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://wa.me/6285117568408" target="_blank" class="btn-wa">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C5.582 2 2 5.582 2 10c0 1.585.44 3.068 1.203 4.338L2 18l3.775-1.188A7.96 7.96 0 0010 18c4.418 0 8-3.582 8-8s-3.582-8-8-8z" fill="white" fill-opacity="0.9"/></svg>
-          <span data-id>Chat via WhatsApp</span>
-          <span data-en>Chat via WhatsApp</span>
-        </a>
-      </div>
-      <div class="sr d2">
-        <div class="map-frame">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.940!2d107.60188!3d-6.8963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6ae3f60de1f%3A0x45a897f3e78e0a5c!2sJl.%20Tamansari%20No.44%2C%20Tamansari%2C%20Kec.%20Bandung%20Wetan%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040116!5e0!3m2!1sid!2sid!4v1706000000000!5m2!1sid!2sid"
-            allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="InnSide Laundry Location">
-          </iframe>
-        </div>
-        <a href="https://maps.google.com/?q=InnSide+Laundry+Jl+Tamansari+44+Bandung" target="_blank" class="map-cta">
-          <span data-id>&#128205; Buka di Google Maps &rarr;</span>
-          <span data-en>&#128205; Open in Google Maps &rarr;</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -1226,16 +455,16 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
         <p class="footer-brand-desc" data-id>Solusi laundry premium untuk kehidupan yang lebih nyaman dan mudah di Bandung.</p>
         <p class="footer-brand-desc" data-en>Premium laundry solutions for a more comfortable and effortless life in Bandung.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/innsidelaundry/" class="social-btn" title="Instagram" target="_blank" aria-label="Instagram InnSide Laundry">
+          <a href="https://www.instagram.com/innsidelaundry/" class="social-btn" title="Instagram" target="_blank">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="3.5" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.3"/><circle cx="10.2" cy="3.8" r="0.7" fill="currentColor"/></svg>
           </a>
-          <a href="https://wa.me/6285117568408" class="social-btn" title="WhatsApp" target="_blank" aria-label="WhatsApp InnSide Laundry">
+          <a href="https://wa.me/6285117568408" class="social-btn" title="WhatsApp" target="_blank">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1.5C3.96 1.5 1.5 3.96 1.5 7c0 1.05.29 2.03.79 2.88L1.5 12.5l2.7-.77A5.49 5.49 0 007 12.5c3.04 0 5.5-2.46 5.5-5.5S10.04 1.5 7 1.5z" stroke="currentColor" stroke-width="1.3"/></svg>
           </a>
-          <a href="https://www.facebook.com/p/InnSide-Laundry-61579352336356/" class="social-btn" title="Facebook" target="_blank" aria-label="Facebook InnSide Laundry">
+          <a href="https://www.facebook.com/p/InnSide-Laundry-61579352336356/" class="social-btn" title="Facebook" target="_blank">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 7H6V10H7.5V7z" fill="currentColor"/><path d="M7.5 5.5C7.5 5.22 7.72 5 8 5H9V6.5H8C7.72 6.5 7.5 6.28 7.5 6V5.5z" stroke="currentColor" stroke-width="1"/><path d="M6 7h3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
           </a>
-          <a href="https://maps.google.com/?q=InnSide+Laundry+Bandung" class="social-btn" title="Google Maps" target="_blank" aria-label="Google Maps InnSide Laundry">
+          <a href="https://maps.google.com/?q=InnSide+Laundry+Bandung" class="social-btn" title="Google Maps" target="_blank">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1C4.79 1 3 2.79 3 5c0 3 4 9 4 9s4-6 4-9c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
           </a>
         </div>
@@ -1286,27 +515,42 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
   </div>
 </footer>
 
+<a href="https://wa.me/6285117568408" target="_blank" class="floating-wa" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16 4.5C9.649 4.5 4.5 9.649 4.5 16c0 1.786.438 3.475 1.203 4.976L4.5 27.5l6.195-1.307A11.41 11.41 0 0 0 16 27.5c6.351 0 11.5-5.149 11.5-11.5S22.351 4.5 16 4.5zm0 2.2c5.132 0 9.3 4.168 9.3 9.3 0 5.131-4.168 9.3-9.3 9.3-1.63 0-3.205-.42-4.574-1.213l-.328-.18-3.674.774.782-3.59-.2-.33A9.29 9.29 0 0 1 6.7 16c0-5.132 4.168-9.3 9.3-9.3zm-2.1 4.56c-.241 0-.563.21-.918.65-.355.44-1.377 1.5-1.377 3.647 0 2.148 1.411 4.22 1.606 4.514.195.293 2.719 4.273 6.877 5.829 3.4 1.336 4.088 1.071 4.821.994.733-.078 2.36-1.086 2.687-2.276.328-1.19.328-2.205.229-2.415-.099-.209-.39-.333-.818-.583-.428-.25-2.537-1.414-2.934-1.577-.397-.164-.685-.246-1.034.247-.35.494-1.323 1.575-1.622 1.891-.298.316-.595.355-1.104.12-.509-.236-2.145-.88-4.088-2.746-1.512-1.56-2.527-3.48-2.824-4.069-.297-.589-.03-.907.19-1.198.195-.266.545-.777.814-1.168.27-.392.344-.653.518-.955.174-.303.08-.591-.031-.836-.111-.245-.934-2.307-1.315-3.172-.348-.731-.708-.781-1.034-.794-.287-.009-.613-.009-.938-.009Z" fill="currentColor"/>
+  </svg>
+</a>
+
 <script>
+/* ===================== LANGUAGE ===================== */
 var currentLang = 'id';
 function setLang(l) {
   currentLang = l;
   document.body.className = 'lang-' + l;
   document.documentElement.lang = l;
-  document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.classList.toggle('on', btn.dataset.lang === l);
-  });
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); });
+  var activeButton = document.querySelector('.lang-btn[onclick="setLang(\'' + l + '\')"]');
+  if (activeButton) activeButton.classList.add('on');
 }
+
+/* ===================== NAV SCROLL ===================== */
 window.addEventListener('scroll', function() {
   document.getElementById('mainNav').classList.toggle('up', window.scrollY > 8);
 });
+
+/* ===================== MOBILE NAV ===================== */
 function toggleMnav() { document.getElementById('mnavEl').classList.toggle('open'); }
 function closeMnav() { document.getElementById('mnavEl').classList.remove('open'); }
+
+/* ===================== SERVICE TABS ===================== */
 function switchSvcTab(btn, id) {
   document.querySelectorAll('.svc-tab').forEach(function(b) { b.classList.remove('active'); });
   document.querySelectorAll('.svc-panel').forEach(function(p) { p.classList.remove('active'); });
   btn.classList.add('active');
   document.getElementById('svc-' + id).classList.add('active');
 }
+
+/* ===================== SCROLL REVEAL ===================== */
 var srObs = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
     if (e.isIntersecting) { e.target.classList.add('in'); }
@@ -1314,8 +558,10 @@ var srObs = new IntersectionObserver(function(entries) {
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 document.querySelectorAll('.sr').forEach(function(el) { srObs.observe(el); });
 
+/* ===================== MEDIA MODAL ===================== */
 var medTarget = null;
 var medTabActive = 'url';
+
 function openMedModal(target, desc, src) {
   medTarget = target;
   document.getElementById('medDesc').textContent = 'Ganti media untuk: ' + desc;
@@ -1330,6 +576,7 @@ function closeMedModal() {
 document.getElementById('medModal').addEventListener('click', function(e) {
   if (e.target === this) closeMedModal();
 });
+
 function switchMedTab(btn, tab) {
   medTabActive = tab;
   document.querySelectorAll('.med-tab').forEach(function(b) { b.classList.remove('active'); });
@@ -1337,6 +584,7 @@ function switchMedTab(btn, tab) {
   document.getElementById('medUrlPanel').style.display = tab === 'url' ? 'block' : 'none';
   document.getElementById('medUploadPanel').style.display = tab === 'upload' ? 'block' : 'none';
 }
+
 function applyMedia() {
   var fileInput = document.getElementById('medFile');
   var urlVal = document.getElementById('medUrl').value.trim();
@@ -1353,26 +601,32 @@ function applyMedia() {
   }
   closeMedModal();
 }
+
 function updateHeroStatus() {
   var statusCard = document.querySelector('.hero-status-card');
   if (!statusCard) return;
+
   var dot = statusCard.querySelector('.hero-status-dot');
   var idText = statusCard.querySelector('.hero-status-text[data-id]');
   var enText = statusCard.querySelector('.hero-status-text[data-en]');
   if (!dot || !idText || !enText) return;
+
   function parseMinutes(timeValue) {
     var parts = timeValue.split(':');
     return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
   }
+
   function parseRange(value) {
     var match = value.trim().match(/^(\d{1,2}:\d{2})\s*[–-]\s*(\d{1,2}:\d{2})$/);
     if (!match) return null;
     return { open: parseMinutes(match[1]), close: parseMinutes(match[2]) };
   }
+
   var now = new Date();
   var currentDay = now.getDay();
   var currentMinutes = now.getHours() * 60 + now.getMinutes();
   var open = false;
+
   var rows = document.querySelectorAll('.hours-row');
   rows.forEach(function(row) {
     var startDay = parseInt(row.dataset.dayStart, 10);
@@ -1380,6 +634,7 @@ function updateHeroStatus() {
     var openTime = row.dataset.open;
     var closeTime = row.dataset.close;
     var timeRange = null;
+
     if (!isNaN(startDay) && !isNaN(endDay) && openTime && closeTime) {
       timeRange = { open: parseMinutes(openTime), close: parseMinutes(closeTime) };
     } else {
@@ -1388,18 +643,22 @@ function updateHeroStatus() {
         timeRange = parseRange(timeText.textContent || '');
       }
     }
+
     if (timeRange && currentDay >= startDay && currentDay <= endDay) {
       open = currentMinutes >= timeRange.open && currentMinutes < timeRange.close;
     }
   });
+
   dot.classList.toggle('closed', !open);
   idText.textContent = open ? 'Buka Sekarang' : 'Tutup Sekarang';
   enText.textContent = open ? 'Open Now' : 'Closed Now';
 }
+
 window.addEventListener('load', function() {
   updateHeroStatus();
   setInterval(updateHeroStatus, 60000);
 });
+
 function setMediaSrc(src, type) {
   var t = medTarget;
   if (t === 'hero') {
@@ -1436,6 +695,7 @@ function setMediaSrc(src, type) {
     box.insertBefore(newEl, box.querySelector('.gal-overlay'));
   }
 }
+
 (function(){
   var carouselInterval = null;
   function startMobileGallery(){
