@@ -3,10 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="InnSide Laundry Bandung menyediakan layanan laundry premium, self service, drop-off, setrika, dan laundry express dengan fasilitas bersih, nyaman, dan cepat.">
+<meta name="keywords" content="laundry bandung, laundry premium bandung, self service laundry bandung, innsidelaundry, innside laundry">
+<meta name="author" content="InnSide Laundry">
+<meta name="theme-color" content="#d70000">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="InnSide Laundry — Premium Laundry Bandung">
+<meta property="og:description" content="Laundry premium dengan layanan cepat, area tunggu nyaman, teknologi modern, dan harga terjangkau di Bandung.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://github.com/innsidelaundry-boop/innside-assets/blob/main/20250928_141101.jpg?raw=true">
+<meta property="og:url" content="https://innsidelaundry-boop.github.io/innside-laundry/">
+<link rel="canonical" href="https://innsidelaundry-boop.github.io/innside-laundry/">
 <title>InnSide Laundry — Premium Laundry Bandung</title>
 <link rel="icon" type="image/png" href="https://github.com/innsidelaundry-boop/innside-assets/blob/main/Logo%201200PX%20-%20White.png?raw=true">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -611,15 +623,15 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
       <li><a href="#contact" data-id>Kontak</a><a href="#contact" data-en>Contact</a></li>
     </ul>
     <div class="nav-controls">
-      <div class="lang-toggle">
-        <button class="lang-btn on" onclick="setLang('id')">ID</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <div class="lang-toggle" aria-label="Language switcher">
+        <button class="lang-btn on" type="button" data-lang="id" aria-label="Switch language to Indonesian" onclick="setLang('id')">ID</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-label="Switch language to English" onclick="setLang('en')">EN</button>
       </div>
       <a href="https://wa.me/6285117568408" target="_blank" class="nav-wa">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7c0 1.11.295 2.148.81 3.038L1 13l3.048-.797A5.98 5.98 0 007 13c3.314 0 6-2.686 6-6s-2.686-6-6-6z" stroke="white" stroke-width="1.3"/></svg>
         WhatsApp
       </a>
-      <div class="hamburger" onclick="toggleMnav()" id="hbg">
+      <div class="hamburger" onclick="toggleMnav()" id="hbg" aria-label="Open menu" role="button" tabindex="0">
         <span></span><span></span><span></span>
       </div>
     </div>
@@ -1214,16 +1226,16 @@ footer { background: var(--charcoal); color: rgba(255,255,255,0.5); padding: 68p
         <p class="footer-brand-desc" data-id>Solusi laundry premium untuk kehidupan yang lebih nyaman dan mudah di Bandung.</p>
         <p class="footer-brand-desc" data-en>Premium laundry solutions for a more comfortable and effortless life in Bandung.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/innsidelaundry/" class="social-btn" title="Instagram" target="_blank">
+          <a href="https://www.instagram.com/innsidelaundry/" class="social-btn" title="Instagram" target="_blank" aria-label="Instagram InnSide Laundry">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="3.5" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.3"/><circle cx="10.2" cy="3.8" r="0.7" fill="currentColor"/></svg>
           </a>
-          <a href="https://wa.me/6285117568408" class="social-btn" title="WhatsApp" target="_blank">
+          <a href="https://wa.me/6285117568408" class="social-btn" title="WhatsApp" target="_blank" aria-label="WhatsApp InnSide Laundry">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1.5C3.96 1.5 1.5 3.96 1.5 7c0 1.05.29 2.03.79 2.88L1.5 12.5l2.7-.77A5.49 5.49 0 007 12.5c3.04 0 5.5-2.46 5.5-5.5S10.04 1.5 7 1.5z" stroke="currentColor" stroke-width="1.3"/></svg>
           </a>
-          <a href="https://www.facebook.com/p/InnSide-Laundry-61579352336356/" class="social-btn" title="Facebook" target="_blank">
+          <a href="https://www.facebook.com/p/InnSide-Laundry-61579352336356/" class="social-btn" title="Facebook" target="_blank" aria-label="Facebook InnSide Laundry">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="3" stroke="currentColor" stroke-width="1.3"/><path d="M7.5 7H6V10H7.5V7z" fill="currentColor"/><path d="M7.5 5.5C7.5 5.22 7.72 5 8 5H9V6.5H8C7.72 6.5 7.5 6.28 7.5 6V5.5z" stroke="currentColor" stroke-width="1"/><path d="M6 7h3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
           </a>
-          <a href="https://maps.google.com/?q=InnSide+Laundry+Bandung" class="social-btn" title="Google Maps" target="_blank">
+          <a href="https://maps.google.com/?q=InnSide+Laundry+Bandung" class="social-btn" title="Google Maps" target="_blank" aria-label="Google Maps InnSide Laundry">
             <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 1C4.79 1 3 2.79 3 5c0 3 4 9 4 9s4-6 4-9c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
           </a>
         </div>
@@ -1280,8 +1292,9 @@ function setLang(l) {
   currentLang = l;
   document.body.className = 'lang-' + l;
   document.documentElement.lang = l;
-  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('on'); });
-  document.querySelector('.lang-btn[onclick="setLang(\'' + l + '\')"]').classList.add('on');
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('on', btn.dataset.lang === l);
+  });
 }
 window.addEventListener('scroll', function() {
   document.getElementById('mainNav').classList.toggle('up', window.scrollY > 8);
